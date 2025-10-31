@@ -1,8 +1,18 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MINED</title>
+
     <style>
-        body { margin: 0; overflow: hidden; background: #111; color: white;}
+
+        body { margin: 0; 
+        overflow: hidden; background: #111; color: white;}
         .node {
         position: absolute;
         padding: 10px 20px;
@@ -12,10 +22,49 @@
         cursor: move;
         user-select: none;
         }
+
+        #connections {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+        }
+
+        #app {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+        }
+
+        .node {
+            position: absolute;
+            padding: 10px 20px;
+            background: #222;
+            border: 2px solid #444l
+            border-radius: 12px;
+            cursor: grab;
+            user-select: none;
+        }
+        .node:active {
+            cursor: grabbing;
+            background: #333;
+        }
+
     </style>
 </head>
 <body>
+
+    <svg id="connections"
+         width="100%"
+         height="100%"
+         style="position:absolute;top:0;left:0;z-index:0;"></svg>
+
     <div id="app"></div>
+
     <script src="app.js"></script>
+
 </body>
 </html>
